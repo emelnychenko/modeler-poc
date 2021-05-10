@@ -1,0 +1,22 @@
+{
+  "name": "modeler-poc",
+  "version": "1.0.0",
+  "description": "something abstract until i come up with better description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emelnychenko/modeler-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emelnychenko/modeler-poc/issues"
+  },
+  "homepage": "https://github.com/emelnychenko/modeler-poc#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
