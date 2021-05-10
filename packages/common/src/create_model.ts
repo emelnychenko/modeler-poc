@@ -4,11 +4,10 @@ import { ModelBuilder } from './model_builder';
 
 /**
  * Factory function for model.
- * @param name
  * @param configure
  */
-export function createModel(name: string, configure: (builder: ModelBuilder) => ModelBuilder = x => x): Model {
-  const builder = new ModelBuilder(name);
+export function createModel(configure: (builder: ModelBuilder) => ModelBuilder = x => x): Model {
+  const builder = new ModelBuilder();
   const configured = configure(builder);
   return build(configured);
 }

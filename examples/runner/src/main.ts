@@ -1,7 +1,7 @@
 import { createModel } from '@modeler/common';
 
 (async () => {
-  const cat = createModel('cat', x => x.add('tail'));
+  const cat = createModel(x => x.field('tail'));
 
   console.log(cat);
 })();

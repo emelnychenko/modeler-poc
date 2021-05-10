@@ -1,9 +1,11 @@
 import { Field } from './field';
 import { Fields } from './fields';
 
-export interface Model {
+export interface FieldGroup extends Field {
+  type: 'group';
+
   /**
-   * {@link Field} mapping.
+   * Sub-collection of fields.
    */
   fields: Fields;
 }

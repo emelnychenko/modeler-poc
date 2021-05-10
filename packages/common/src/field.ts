@@ -1,6 +1,6 @@
 export interface Field {
   /**
-   * Name of a field.
+   * Type of a field.
    */
-  name: string;
+  type: string;
 }

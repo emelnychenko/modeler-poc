@@ -1,30 +1,46 @@
 import { Buildable } from './buildable';
 import { Model } from './model';
 import { Field } from './field';
+import { Fields } from './fields';
+import { FieldGroup } from './field_group';
 
+/**
+ * todo:
+ * - group field
+ * - array field
+ */
 export class ModelBuilder implements Model, Buildable<Model> {
   /**
-   * @param name
    * @param fields
    */
-  constructor(
-    public readonly name: string,
-    public readonly fields: readonly Field[] = [],
-  ) { }
+  constructor(public readonly fields: Fields = {}) { }
+
+  add(key: string, field: Field): ModelBuilder {
+    return new ModelBuilder({ ...this.fields, [key]: field });
+  }
 
   /**
    * Add {@link Field}.
+   * @param key
+   * @param type describes type of a field (default `'text'`).
    */
-  add(name: string): ModelBuilder {
-    const field = { name };
-    return new ModelBuilder(this.name, [...this.fields, field]);
+  field(key: string, type = 'text'): ModelBuilder {
+    return this.add(key, { type });
+  }
+
+  group(key: string) {
+    const field: FieldGroup = {
+      type: 'group',
+      fields: {},
+    };
+
+    return this.add(key, field);
   }
 
   /**
    * @inheritDoc
    */
   build(): Model {
-    const { name, fields } = this;
-    return { name, fields };
+    return { fields: this.fields };
   }
 }
