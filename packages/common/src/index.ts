@@ -1,3 +1,4 @@
-// ... export public modules
-
-export const MODELER_VERSION = '1.0.0';
+export { Field } from './field';
+export { Model } from './model';
+export { ModelBuilder } from './model_builder';
+export { createModel } from './create_model';

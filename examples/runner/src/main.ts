@@ -1,5 +1,7 @@
-import { MODELER_VERSION } from '@modeler/common';
+import { createModel } from '@modeler/common';
 
 (async () => {
-  console.log(`Version: ${MODELER_VERSION}`);
+  const cat = createModel('cat', x => x.add('tail'));
+
+  console.log(cat);
 })();
