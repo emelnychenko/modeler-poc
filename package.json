@@ -1,10 +1,20 @@
 {
-  "name": "modeler-poc",
+  "name": "@modeler/modeler",
   "version": "1.0.0",
   "description": "something abstract until i come up with better description",
-  "main": "index.js",
+  "private": true,
+  "engines": {
+    "npm": "^7.0.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "eslint --ext js,ts,tsx ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +27,8 @@
   },
   "homepage": "https://github.com/emelnychenko/modeler-poc#readme",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "eslint": "~7.26.0",
+    "lerna": "^4.0.0",
+    "typescript": "~4.2.0"
   }
 }
